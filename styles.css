@@ -1,0 +1,348 @@
+/* Reset default styles and set global font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Familjen Grotesk', sans-serif;
+}
+
+/* Navigation bar - fixed at top with subtle shadow */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.95);  /* Semi-transparent white background */
+    display: flex;                                /* Use flexbox for layout */
+    align-items: center;                          /* Vertically center items */
+    padding: 0 45px;                             /* Horizontal padding */
+    height: 70px;                                /* Fixed height for navbar */
+    position: fixed;                             /* Stick to viewport */
+    top: 0;                                      /* Align to top */
+    left: 0;                                     /* Full width positioning */
+    right: 0;                                    /* Full width positioning */
+    width: 100%;                                 /* Ensure full width */
+    z-index: 1000;                              /* Keep above other content */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);  /* Subtle shadow effect */
+}
+/* Global link styles with hover animation setup */
+a {
+    text-decoration: none;           /* Remove default underline */
+    color: #333;                    /* Dark gray text color */
+    font-weight: 600;               /* Semi-bold text */
+    font-size: 16px;                /* Base font size */
+    position: relative;             /* For underline animation */
+    transition: color 0.3s ease;    /* Smooth color change */
+}
+
+/* Underline animation effect for navigation links */
+a::after {
+    content: '';                    /* Required for pseudo-element */
+    position: absolute;             /* Position the underline */
+    width: 0;                       /* Start with no width */
+    height: 2px;                    /* Thickness of underline */
+    bottom: -4px;                   /* Space below text */
+    left: 0;                        /* Start from left */
+    background-color: #1e1e1e;      /* Dark underline color */
+    transition: width 0.3s ease;    /* Smooth width animation */
+}
+
+/* Link hover effect - darkens text */
+a:hover {
+    color: #1e1e1e;                 /* Darken text on hover */
+}
+
+/* Underline animation on hover */
+a:hover::after {
+    width: 100%;                    /* Expand underline to full width */
+}
+
+/* Center navigation menu container */
+.inside-nav-container {
+    display: flex;                /* Use flexbox */
+    align-items: center;          /* Center items vertically */
+    justify-content: center;      /* Center items horizontally */
+    position: absolute;           /* Position within navbar */
+    left: 50%;                   /* Center positioning */
+    transform: translateX(-50%);  /* Perfect horizontal centering */
+    gap: 28px;                   /* Space between nav items */
+    height: 100%;                /* Full height of parent */
+    width: auto;                 /* Auto width based on content */
+}
+
+/* Tablet view adjustments */
+@media screen and (max-width: 750px) {
+    .navbar {
+        padding: 0 35px;              /* Reduced horizontal padding */
+        height: 65px;                 /* Slightly smaller height */
+    }
+    
+    .inside-nav-container {
+        /* Keep centered like desktop */
+        position: absolute;           /* Maintain absolute position */
+        left: 50%;                   /* Center positioning */
+        transform: translateX(-50%);  /* Perfect centering */
+        gap: 25px;                   /* Reduced gap between items */
+    }
+
+    a {
+        font-size: 15px;             /* Smaller font for tablets */
+    }
+    
+    .hire {
+        min-width: 110px;            /* Minimum button width */
+        padding: 10px 22px;          /* Comfortable padding */
+        font-size: 14px;             /* Slightly smaller text */
+        margin-left: auto;           /* Push to right */
+    }
+    .hero-content {
+
+    }
+}
+
+/* Mobile view adjustments */
+@media screen and (max-width: 480px) {
+    .navbar {
+        padding: 0 20px;
+        height: 60px;
+    }
+    
+    .inside-nav-container {
+        position: relative;
+        left: 0;
+        transform: none;
+        justify-content: flex-start;
+        margin-left: 15px;
+        gap: 18px;
+    }
+
+    a {
+        font-size: 13px;
+    }
+    
+    .hire {
+        min-width: 90px;
+        padding: 8px 16px;
+        font-size: 13px;
+        margin-right: 10px;
+    }
+    
+}
+.hire {
+    margin-left: auto;
+}
+
+/* Primary button style with hover animation */
+button {
+  background-color: #1e1e1e;        /* Dark background */
+  border: 2px solid #1e1e1e;        /* Matching border */
+  color: white;                      /* White text */
+  padding: 12px 24px;               /* Comfortable padding */
+  text-align: center;               /* Center text */
+  text-decoration: none;            /* Remove underline */
+  display: inline-block;            /* Proper button behavior */
+  font-size: 14px;                  /* Text size */
+  border-radius: 8px;               /* Rounded corners */
+  white-space: nowrap;              /* Prevent text wrapping */
+  transition: all 0.3s ease;        /* Smooth hover effect */
+  cursor: pointer;                  /* Show clickable cursor */
+  position: relative;               /* For hover effect */
+  overflow: hidden;                 /* For hover animation */
+  z-index: 1;                       /* Stack context */
+}
+
+button::before {
+  content: '';                     /* Required for pseudo-element */
+  position: absolute;              /* Position for overlay effect */
+  top: 0;                         /* Align to top */
+  left: 0;                        /* Align to left */
+  width: 0;                       /* Start with no width */
+  height: 100%;                   /* Full height */
+  background-color: white;        /* White overlay color */
+  transition: width 0.3s ease;    /* Smooth width animation */
+  z-index: -1;                    /* Place behind button text */
+}
+
+/* Button text color change on hover */
+button:hover {
+  color: #1e1e1e;                  /* Text becomes dark on hover */
+}
+
+/* Button background fill animation on hover */
+button:hover::before {
+  width: 100%;                     /* White overlay expands to full width */
+}
+
+/* Small mobile view adjustments */
+@media screen and (max-width: 360px) {
+    .navbar {
+        padding: 0 15px;
+        height: 55px;
+    }
+    
+    .inside-nav-container {
+        gap: 15px;
+        margin-left: 10px;
+    }
+
+    a {
+        font-size: 12px;
+    }
+    
+    .hire {
+        min-width: 80px;
+        padding: 7px 14px;
+        font-size: 12px;
+        margin-right: 5px;
+    }
+    
+}
+
+/* hero */
+/* Hero section with centered content */
+.hero-content {
+    display: flex;                /* Use flexbox */
+    flex-direction: column;       /* Stack content vertically */
+    align-items: center;          /* Center horizontally */
+    text-align: center;          /* Center text content */
+    padding: 100px 60px 50px;    /* Top, sides, bottom padding */
+    margin-top: 2rem;            /* Space from top */
+    gap: 20px;                   /* Space between elements */
+    height: 100vh;               /* Full viewport height */
+}
+
+.profile-pic {
+    width: 152px;                /* Fixed width for profile image */
+    height: 152px;               /* Fixed height for profile image */
+    border-radius: 50%;          /* Make image circular */
+}
+
+/* Right side navigation arrows for page sections */
+.navigation-next {
+    display: flex;                /* Use flexbox layout */
+    flex-direction: column;       /* Stack vertically */
+    align-items: center;          /* Center horizontally */
+    gap: 15px;                   /* Space between arrows */
+    position: fixed;             /* Fix to viewport */
+    right: 40px;                 /* Distance from right */
+    top: 50%;                    /* Vertical center */
+    transform: translateY(-50%);  /* Perfect centering */
+    z-index: 100;               /* Stack above content */
+}
+
+/* Circular navigation arrow buttons */
+.navigation-next a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f8f8;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.navigation-next a::after {
+    display: none;  /* Remove underline effect */
+}
+
+/* Navigation arrow button hover effect */
+.navigation-next a:hover {
+    background-color: #1e1e1e;       /* Dark background on hover */
+}
+
+.navigation-next img {
+    width: 20px;                     /* Fixed icon width */
+    height: 20px;                    /* Fixed icon height */
+    transition: filter 0.3s ease;    /* Smooth color change for icon */
+}
+
+/* Icon color change on button hover */
+.navigation-next a:hover img {
+    filter: brightness(0) invert(1);  /* Change icon to white on hover */
+}
+
+.navigation-next img[alt="arrow up"] {
+    transform: rotate(-90deg);        /* Rotate up arrow */
+}
+
+.navigation-next img[alt="arrow down"] {
+    transform: rotate(90deg);         /* Rotate down arrow */
+}
+
+/* Left side social media links container */
+.all-links {
+    display: flex;                /* Use flexbox for layout */
+    flex-direction: column;       /* Stack items vertically */
+    align-items: center;          /* Center items horizontally */
+    gap: 15px;                   /* Space between items */
+    position: fixed;             /* Fix position in viewport */
+    left: 40px;                  /* Distance from left edge */
+    top: 50%;                    /* Center vertically */
+    transform: translateY(-50%);  /* Perfect vertical centering */
+    z-index: 100;               /* Keep above main content */
+}
+
+/* Circular social media buttons */
+.all-links a {
+    width: 40px;                 /* Fixed width for circular buttons */
+    height: 40px;                /* Fixed height for circular buttons */
+    display: flex;               /* Use flexbox for centering */
+    align-items: center;         /* Center content vertically */
+    justify-content: center;     /* Center content horizontally */
+    background-color: #f8f8f8;   /* Light gray background */
+    border-radius: 50%;          /* Make buttons circular */
+}
+
+.all-links a::after {
+    display: none !important;
+}
+
+.all-links img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Social link button hover effect */
+.all-links a:hover {
+    background-color: #1e1e1e;       /* Dark background on hover */
+    transition: background-color 0.3s ease; /* Smooth background change */
+}
+
+/* Social icon color change on hover */
+.all-links a:hover img {
+    filter: brightness(0) invert(1);  /* Change icon to white on hover */
+    transition: filter 0.3s ease;     /* Smooth icon color change */
+}
+
+/* Specific styling for arrow up */
+.all-links a img[alt="arrow up"] {
+    transform: rotate(-90deg);
+}
+
+.all-links a:hover img[alt="arrow up"] {
+    transform: rotate(-90deg);
+}
+
+/* Specific styling for arrow down */
+.all-links a img[alt="arrow down"] {
+    transform: rotate(90deg);
+}
+
+.all-links a:hover img[alt="arrow down"] {
+    transform: rotate(90deg);
+}
+
+/* Tablet view social links adjustments */
+@media screen and (max-width: 768px) {
+    .all-links {
+        left: 40px;                  /* Maintain tablet spacing from left */
+    }
+}
+
+/* Mobile view social links adjustments */
+@media screen and (max-width: 480px) {
+    .all-links {
+        left: 20px;                  /* Closer to edge on mobile */
+        gap: 15px;                   /* Reduced spacing between items */
+    }
+    .navigation-next {
+        right: 20px;                 /* Closer to edge on mobile */
+    }
+}
