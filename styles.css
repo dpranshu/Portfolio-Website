@@ -6,86 +6,153 @@
   font-family: "Familjen Grotesk", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  /* min-height: 100vh; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* padding-top: 70px; */
+}
+
 /* Navigation bar - fixed at top with subtle shadow */
 .navbar {
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.95
-  ); /* Semi-transparent white background */
-  display: flex; /* Use flexbox for layout */
-  align-items: center; /* Vertically center items */
-  padding: 0 45px; /* Horizontal padding */
-  height: 70px; /* Fixed height for navbar */
-  position: fixed; /* Stick to viewport */
-  top: 0; /* Align to top */
-  left: 0; /* Full width positioning */
-  right: 0; /* Full width positioning */
-  width: 100%; /* Ensure full width */
-  z-index: 1000; /* Keep above other content */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+  background-color: rgba(255,
+      255,
+      255,
+      0.95);
+  /* Semi-transparent white background */
+  display: flex;
+  /* Use flexbox for layout */
+  align-items: center;
+  /* Vertically center items */
+  padding: 0 45px;
+  /* Horizontal padding */
+  height: 70px;
+  /* Fixed height for navbar */
+  position: fixed;
+  /* Stick to viewport */
+  top: 0;
+  /* Align to top */
+  left: 0;
+  /* Full width positioning */
+  right: 0;
+  /* Full width positioning */
+  width: 100%;
+  /* Ensure full width */
+  z-index: 1000;
+  /* Keep above other content */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow effect */
 }
+
 /* Global link styles with hover animation setup */
 a {
-  text-decoration: none; /* Remove default underline */
-  color: #333; /* Dark gray text color */
-  font-weight: 600; /* Semi-bold text */
-  font-size: 16px; /* Base font size */
-  position: relative; /* For underline animation */
-  transition: color 0.3s ease; /* Smooth color change */
+  text-decoration: none;
+  /* Remove default underline */
+  color: #333;
+  /* Dark gray text color */
+  font-weight: 600;
+  /* Semi-bold text */
+  font-size: 16px;
+  /* Base font size */
+  position: relative;
+  /* For underline animation */
+  transition: color 0.3s ease;
+  /* Smooth color change */
 }
 
 /* Underline animation effect for navigation links */
 a::after {
-  content: ""; /* Required for pseudo-element */
-  position: absolute; /* Position the underline */
-  width: 0; /* Start with no width */
-  height: 2px; /* Thickness of underline */
-  bottom: -4px; /* Space below text */
-  left: 0; /* Start from left */
-  background-color: #1e1e1e; /* Dark underline color */
-  transition: width 0.3s ease; /* Smooth width animation */
+  content: "";
+  /* Required for pseudo-element */
+  position: absolute;
+  /* Position the underline */
+  width: 0;
+  /* Start with no width */
+  height: 2px;
+  /* Thickness of underline */
+  bottom: -4px;
+  /* Space below text */
+  left: 0;
+  /* Start from left */
+  background-color: #1e1e1e;
+  /* Dark underline color */
+  transition: width 0.3s ease;
+  /* Smooth width animation */
 }
 
 /* Link hover effect - darkens text */
 a:hover {
-  color: #1e1e1e; /* Darken text on hover */
+  color: #1e1e1e;
+  /* Darken text on hover */
 }
 
 /* Underline animation on hover */
 a:hover::after {
-  width: 100%; /* Expand underline to full width */
+  width: 100%;
+  /* Expand underline to full width */
 }
 
 /* Center navigation menu container */
 .inside-nav-container {
-  display: flex; /* Use flexbox */
-  align-items: center; /* Center items vertically */
-  justify-content: center; /* Center items horizontally */
-  position: absolute; /* Position within navbar */
-  left: 50%; /* Center positioning */
-  transform: translateX(-50%); /* Perfect horizontal centering */
-  gap: 28px; /* Space between nav items */
-  height: 100%; /* Full height of parent */
-  width: auto; /* Auto width based on content */
+  display: flex;
+  /* Use flexbox */
+  align-items: center;
+  /* Center items vertically */
+  justify-content: center;
+  /* Center items horizontally */
+  position: absolute;
+  /* Position within navbar */
+  left: 50%;
+  /* Center positioning */
+  transform: translateX(-50%);
+  /* Perfect horizontal centering */
+  gap: 28px;
+  /* Space between nav items */
+  height: 100%;
+  /* Full height of parent */
+  width: auto;
+  /* Auto width based on content */
+}
+@media screen and (min-width: 1200px) {
+  .container-both-aboutme-my-img {
+       margin-top: 0px;
+  }
+}
+
+@media screen and (min-width: 959px) and (max-width: 1199px) {
+  
+  .container-both-aboutme-my-img {
+       margin-top: 150px;
+    /* display: flex; */
+    /* gap: 15%; Space between image and text lag gay */
+  }
 }
 
 /* media for above tab (first ) (large)*/
 @media screen and (min-width: 959px) {
   .container-both-aboutme-my-img {
-    margin: 70px 140px;
+  /* margin-top: 150px; */
+    margin: 0px 140px;
     /* height: 100%; */
     /* background-color: royalblue; */
   }
-  #about > div > div.about-container > h2 {
-    font-size: 30px; /* Space below heading */
+
+  #about>div>div.about-container>h2 {
+    font-size: 30px;
+    /* Space below heading */
   }
 
   .container-both-aboutme-my-img {
+       /* margin-top: 150px; */
     /* display: flex; */
     /* gap: 15%; Space between image and text lag gay */
   }
+
   .my-img {
     width: 100%;
     min-width: 150px;
@@ -98,42 +165,62 @@ a:hover::after {
     /* margin-right: 50px;
     margin-left: 50px; Space on left and right */
   }
+
   .experience {
-    display: flex; /* Use flexbox for layout */
-    gap: 50px; /* Space between experience sections */
-  }
-  #about > div > div.about-container > h2 {
-    margin-bottom: 20px; /* Space below heading */
-  }
-  #about > div > div.about-container > p {
-    margin-bottom: 30px; /* Space below paragraph */
-  }
-  .about-container > div > div.first-cont-experience > h3 {
-    margin-bottom: 10px; /* Space between experience items */
+    display: flex;
+    /* Use flexbox for layout */
+    gap: 50px;
+    /* Space between experience sections */
   }
 
-  .about-container > div > div.second-cont-dev > h3 {
-    margin-bottom: 10px; /* Space between experience items */
+  #about>div>div.about-container>h2 {
+    margin-bottom: 20px;
+    /* Space below heading */
   }
 
-  .about-container > div > div.third-cont-lear > h3 {
-    margin-bottom: 10px; /* Space between experience items */
+  #about>div>div.about-container>p {
+    margin-bottom: 30px;
+    /* Space below paragraph */
   }
+
+  .about-container>div>div.first-cont-experience>h3 {
+    margin-bottom: 10px;
+    /* Space between experience items */
+  }
+
+  .about-container>div>div.second-cont-dev>h3 {
+    margin-bottom: 10px;
+    /* Space between experience items */
+  }
+
+  .about-container>div>div.third-cont-lear>h3 {
+    margin-bottom: 10px;
+    /* Space between experience items */
+  }
+
   li {
-    margin-bottom: 10px; /* Space between list items */
+    margin-bottom: 10px;
+    /* Space between list items */
   }
+
   .about-container {
     /* background-color: lightblue; */
     /* padding-right: 40px; */
     max-width: 60%;
   }
+
   #about {
-    height: 100vh; /* Full height for about section */
+    height: 100vh;
+    /* Full height for about section */
     display: flex;
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
+    justify-content: center;
+    /* Center content horizontally */
+    align-items: center;
+        padding-top: 50px;
+    /* Center content vertically */
   }
 }
+
 .container-both-aboutme-my-img {
   min-width: 100px;
   /* max-width: 100%; */
@@ -142,58 +229,82 @@ a:hover::after {
 /* Tablet view adjustments */
 @media screen and (max-width: 958px) {
   .navbar {
-    padding: 0 35px; /* Reduced horizontal padding */
-    height: 65px; /* Slightly smaller height */
+    padding: 0 35px;
+    /* Reduced horizontal padding */
+    height: 65px;
+    /* Slightly smaller height */
   }
 
   .inside-nav-container {
     /* Keep centered like desktop */
-    position: absolute; /* Maintain absolute position */
-    left: 50%; /* Center positioning */
-    transform: translateX(-50%); /* Perfect centering */
-    gap: 25px; /* Reduced gap between items */
+    position: absolute;
+    /* Maintain absolute position */
+    left: 50%;
+    /* Center positioning */
+    transform: translateX(-50%);
+    /* Perfect centering */
+    gap: 25px;
+    /* Reduced gap between items */
   }
 
   a {
-    font-size: 15px; /* Smaller font for tablets */
+    font-size: 15px;
+    /* Smaller font for tablets */
   }
 
   .hire {
-    min-width: 110px; /* Minimum button width */
-    padding: 10px 22px; /* Comfortable padding */
-    font-size: 14px; /* Slightly smaller text */
-    margin-left: auto; /* Push to right */
+    min-width: 110px;
+    /* Minimum button width */
+    padding: 10px 22px;
+    /* Comfortable padding */
+    font-size: 14px;
+    /* Slightly smaller text */
+    margin-left: auto;
+    /* Push to right */
   }
+
   .all-links {
-    left: 40px; /* Maintain tablet spacing from left */
+    left: 40px;
+    /* Maintain tablet spacing from left */
   }
+
   .container-both-aboutme-my-img {
-    margin: 30px 90px;
+    margin: 80px 90px;
+    
   }
+
   .my-img {
-    width: 100%; /* Slightly smaller image */
-    height: 100%; /* Maintain aspect ratio */
+    width: 100%;
     min-width: 110px;
     max-width: 210px;
   }
-  #about > div > div.about-container > h2 {
+
+  #about>div>div.about-container>h2 {
     margin-bottom: 15px;
   }
+
   .experience {
     display: flex;
     flex-direction: column;
     gap: 20px;
     margin-top: 20px;
   }
-  #about > div > div.about-container > div > div.first-cont-experience > h3 {
-    margin-bottom: 6px; /* Space between experience items */
+
+  #about>div>div.about-container>div>div.first-cont-experience>h3 {
+    margin-bottom: 6px;
+    /* Space between experience items */
   }
-  #about > div > div.about-container > div > div.second-cont-dev > h3 {
-    margin-bottom: 6px; /* Space between experience items */
+
+  #about>div>div.about-container>div>div.second-cont-dev>h3 {
+    margin-bottom: 6px;
+    /* Space between experience items */
   }
-  #about > div > div.about-container > div > div.third-cont-lear > h3 {
-    margin-bottom: 6px; /* Space between experience items */
+
+  #about>div>div.about-container>div>div.third-cont-lear>h3 {
+    margin-bottom: 6px;
+    /* Space between experience items */
   }
+
   li {
     margin-bottom: 4px;
   }
@@ -211,15 +322,19 @@ a:hover::after {
     width: 18px;
     height: 18px;
   }
+
   #about {
-    padding-top: 20px;
+    padding-top: 64px;
+    /* background-color: tomato; */
   }
 
   .container-both-aboutme-my-img {
-    margin: 0 25px;
+    margin: 0px 70px;
+    /* padding-top: 60px; */
     flex-direction: column;
     align-items: center;
     gap: 35px;
+    
   }
 
   .my-img {
@@ -245,12 +360,12 @@ a:hover::after {
     margin-top: 15px;
   }
 
-  #about > div > div.about-container > h2 {
+  #about>div>div.about-container>h2 {
     margin-bottom: 12px;
     font-size: 24px;
   }
 
-  #about > div > div.about-container > p {
+  #about>div>div.about-container>p {
     margin-bottom: 15px;
   }
 
@@ -289,12 +404,14 @@ a:hover::after {
   }
 
   .container-both-aboutme-my-img {
-    margin: 18px 70px;
+    /* margin: 25px 70px; */
   }
+
   .img2 {
     display: none;
   }
 }
+
 .hire {
   margin-left: auto;
 }
@@ -339,49 +456,74 @@ a:hover::after {
 }
 
 .download-resume:hover .download-icon {
-  filter: invert(37%) sepia(74%) saturate(1679%) hue-rotate(249deg)
-    brightness(91%) contrast(91%);
+  filter: invert(37%) sepia(74%) saturate(1679%) hue-rotate(249deg) brightness(91%) contrast(91%);
 }
 
 /* Primary button style with hover animation */
 button {
-  background-color: #1e1e1e; /* Dark background */
-  border: 2px solid #1e1e1e; /* Matching border */
-  color: white; /* White text */
-  padding: 12px 24px; /* Comfortable padding */
-  text-align: center; /* Center text */
-  text-decoration: none; /* Remove underline */
-  display: inline-block; /* Proper button behavior */
-  font-size: 14px; /* Text size */
-  border-radius: 8px; /* Rounded corners */
-  white-space: nowrap; /* Prevent text wrapping */
-  transition: all 0.3s ease; /* Smooth hover effect */
-  cursor: pointer; /* Show clickable cursor */
-  position: relative; /* For hover effect */
-  overflow: hidden; /* Hide overflow for animation */
-  z-index: 1; /* Stack context */
+  background-color: #1e1e1e;
+  /* Dark background */
+  border: 2px solid #1e1e1e;
+  /* Matching border */
+  color: white;
+  /* White text */
+  padding: 12px 24px;
+  /* Comfortable padding */
+  text-align: center;
+  /* Center text */
+  text-decoration: none;
+  /* Remove underline */
+  display: inline-block;
+  /* Proper button behavior */
+  font-size: 14px;
+  /* Text size */
+  border-radius: 8px;
+  /* Rounded corners */
+  white-space: nowrap;
+  /* Prevent text wrapping */
+  transition: all 0.3s ease;
+  /* Smooth hover effect */
+  cursor: pointer;
+  /* Show clickable cursor */
+  position: relative;
+  /* For hover effect */
+  overflow: hidden;
+  /* Hide overflow for animation */
+  z-index: 1;
+  /* Stack context */
 }
 
 button::before {
-  content: ""; /* Required for pseudo-element */
-  position: absolute; /* Position for overlay effect */
-  top: 0; /* Align to top */
-  left: 0; /* Align to left */
-  width: 0; /* Start with no width */
-  height: 100%; /* Full height */
-  background-color: white; /* White overlay color */
-  transition: width 0.3s ease; /* Smooth width animation */
-  z-index: -1; /* Place behind button text */
+  content: "";
+  /* Required for pseudo-element */
+  position: absolute;
+  /* Position for overlay effect */
+  top: 0;
+  /* Align to top */
+  left: 0;
+  /* Align to left */
+  width: 0;
+  /* Start with no width */
+  height: 100%;
+  /* Full height */
+  background-color: white;
+  /* White overlay color */
+  transition: width 0.3s ease;
+  /* Smooth width animation */
+  z-index: -1;
+  /* Place behind button text */
 }
 
 /* Button text color change on hover */
 button:hover {
-  color: #1e1e1e; /* Text becomes dark on hover */
+  color: #1e1e1e;
+  /* Text becomes dark on hover */
 }
 
 /* Button background fill animation on hover */
 button:hover::before {
-  width: 100%; /* White overlay expands to full width */
+  width: 100%;
+  /* White overlay expands to full width */
 }
 
 /* Small mobile view adjustments */
@@ -396,6 +538,7 @@ button:hover::before {
     width: 16px;
     height: 16px;
   }
+
   .navbar {
     padding: 0 15px;
     height: 55px;
@@ -427,43 +570,70 @@ button:hover::before {
 /* hero */
 /* Hero section with centered content */
 .hero-content {
-  display: flex; /* Use flexbox */
-  flex-direction: column; /* Stack content vertically */
+  display: flex;
+  /* Use flexbox */
+  flex-direction: column;
+  /* Stack content vertically */
   align-items: center;
-  justify-content: center; /* Center horizontally */
-  text-align: center; /* Center text content */
-  padding: 100px 60px 50px; /* Top, sides, bottom padding */
+  justify-content: center;
+  /* Center horizontally */
+  text-align: center;
+  /* Center text content */
+  /* padding: 100px 60px 50px; */
+  padding: 0px 60px 0px;
+  /* Top, sides, bottom padding */
   /* margin-top: 2rem;            Space from top */
   /* gap: 20px;                   Space between elements */
-  height: 100vh; /*  Full viewport height */
+  height: 100vh;
+  /*  Full viewport height */
 }
+
 /* higlight with color */
 .highlight {
   color: #8a38f5;
 }
+
 .profile-pic {
-  width: 152px; /* Fixed width for profile image */
-  height: 152px; /* Fixed height for profile image */
-  border-radius: 50%; /* Make image circular */
-  margin-bottom: 15px; /* Space below image */
+  width: 152px;
+  /* Fixed width for profile image */
+  height: 152px;
+  /* Fixed height for profile image */
+  border-radius: 50%;
+  /* Make image circular */
+  margin-bottom: 15px;
+  /* Space below image */
 }
-#hero > div > h1 {
-  margin-bottom: 15px; /* Space below image */
+
+#hero>div>h1 {
+  margin-bottom: 15px;
+  /* Space below image */
 }
-#hero > div > p {
-  margin-bottom: 20px; /* Space below image */
+
+#hero>div>p {
+  margin-bottom: 20px;
+  /* Space below image */
 }
+
 /* Right side navigation arrows for page sections */
 .navigation-next {
-  display: flex; /* Use flexbox layout */
-  flex-direction: column; /* Stack vertically */
-  align-items: center; /* Center horizontally */
-  gap: 15px; /* Space between arrows */
-  position: fixed; /* Fix to viewport */
-  right: 40px; /* Distance from right */
-  top: 50%; /* Vertical center */
-  transform: translateY(-50%); /* Perfect centering */
-  z-index: 100; /* Stack above content */
+  display: flex;
+  /* Use flexbox layout */
+  flex-direction: column;
+  /* Stack vertically */
+  align-items: center;
+  /* Center horizontally */
+  gap: 15px;
+  /* Space between arrows */
+  position: fixed;
+  /* Fix to viewport */
+  right: 40px;
+  /* Distance from right */
+  top: 50%;
+  /* Vertical center */
+  transform: translateY(-50%);
+  /* Perfect centering */
+  z-index: 100;
+  /* Stack above content */
 }
 
 /* Circular navigation arrow buttons */
@@ -479,55 +649,79 @@ button:hover::before {
 }
 
 .navigation-next a::after {
-  display: none; /* Remove underline effect */
+  display: none;
+  /* Remove underline effect */
 }
 
 /* Navigation arrow button hover effect */
 .navigation-next a:hover {
-  background-color: #1e1e1e; /* Dark background on hover */
+  background-color: #1e1e1e;
+  /* Dark background on hover */
 }
 
 .navigation-next img {
-  width: 20px; /* Fixed icon width */
-  height: 20px; /* Fixed icon height */
-  transition: filter 0.3s ease; /* Smooth color change for icon */
+  width: 20px;
+  /* Fixed icon width */
+  height: 20px;
+  /* Fixed icon height */
+  transition: filter 0.3s ease;
+  /* Smooth color change for icon */
 }
 
 /* Icon color change on button hover */
 .navigation-next a:hover img {
-  filter: brightness(0) invert(1); /* Change icon to white on hover */
+  filter: brightness(0) invert(1);
+  /* Change icon to white on hover */
 }
 
 .navigation-next img[alt="arrow up"] {
-  transform: rotate(-90deg); /* Rotate up arrow */
+  transform: rotate(-90deg);
+  /* Rotate up arrow */
 }
 
 .navigation-next img[alt="arrow down"] {
-  transform: rotate(90deg); /* Rotate down arrow */
+  transform: rotate(90deg);
+  /* Rotate down arrow */
 }
 
 /* Left side social media links container */
 .all-links {
-  display: flex; /* Use flexbox for layout */
-  flex-direction: column; /* Stack items vertically */
-  align-items: center; /* Center items horizontally */
-  gap: 15px; /* Space between items */
-  position: fixed; /* Fix position in viewport */
-  left: 40px; /* Distance from left edge */
-  top: 50%; /* Center vertically */
-  transform: translateY(-50%); /* Perfect vertical centering */
-  z-index: 100; /* Keep above main content */
+  display: flex;
+  /* Use flexbox for layout */
+  flex-direction: column;
+  /* Stack items vertically */
+  align-items: center;
+  /* Center items horizontally */
+  gap: 15px;
+  /* Space between items */
+  position: fixed;
+  /* Fix position in viewport */
+  left: 40px;
+  /* Distance from left edge */
+  top: 50%;
+  /* Center vertically */
+  transform: translateY(-50%);
+  /* Perfect vertical centering */
+  z-index: 100;
+  /* Keep above main content */
 }
 
 /* Circular social media buttons */
 .all-links a {
-  width: 40px; /* Fixed width for circular buttons */
-  height: 40px; /* Fixed height for circular buttons */
-  display: flex; /* Use flexbox for centering */
-  align-items: center; /* Center content vertically */
-  justify-content: center; /* Center content horizontally */
-  background-color: #f8f8f8; /* Light gray background */
-  border-radius: 50%; /* Make buttons circular */
+  width: 40px;
+  /* Fixed width for circular buttons */
+  height: 40px;
+  /* Fixed height for circular buttons */
+  display: flex;
+  /* Use flexbox for centering */
+  align-items: center;
+  /* Center content vertically */
+  justify-content: center;
+  /* Center content horizontally */
+  background-color: #f8f8f8;
+  /* Light gray background */
+  border-radius: 50%;
+  /* Make buttons circular */
 }
 
 .all-links a::after {
@@ -541,14 +735,18 @@ button:hover::before {
 
 /* Social link button hover effect */
 .all-links a:hover {
-  background-color: #1e1e1e; /* Dark background on hover */
-  transition: background-color 0.3s ease; /* Smooth background change */
+  background-color: #1e1e1e;
+  /* Dark background on hover */
+  transition: background-color 0.3s ease;
+  /* Smooth background change */
 }
 
 /* Social icon color change on hover */
 .all-links a:hover img {
-  filter: brightness(0) invert(1); /* Change icon to white on hover */
-  transition: filter 0.3s ease; /* Smooth icon color change */
+  filter: brightness(0) invert(1);
+  /* Change icon to white on hover */
+  transition: filter 0.3s ease;
+  /* Smooth icon color change */
 }
 
 /* Specific styling for arrow up */
@@ -572,30 +770,49 @@ button:hover::before {
 /* Mobile view social links adjustments */
 @media screen and (max-width: 480px) {
   .all-links {
-    left: 20px; /* Closer to edge on mobile */
-    gap: 15px; /* Reduced spacing between items */
+    left: 20px;
+    /* Closer to edge on mobile */
+    gap: 15px;
+    /* Reduced spacing between items */
   }
+
   .navigation-next {
-    right: 20px; /* Closer to edge on mobile */
+    right: 20px;
+    /* Closer to edge on mobile */
   }
 }
+
 /* about */
 #about {
+  /* margin-top: 100px; */
+  /* height: 100vh; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   /* height: 100%; Full height for about section */
   /* display: flex;
       justify-content: center; 
       align-items: center;  */
 }
+
 .container-both-aboutme-my-img {
   display: flex;
-  justify-content: center; /* Center content horizontally */
+  justify-content: center;
+      /* padding-top: 90px;
+    padding-bottom: 90px; */
+  /* Center content horizontally */
   gap: 11%;
+  /* margin-top: 150px; */
   /* height: 100vh; */
 }
+
 ol {
-  list-style: none; /* Remove default list style */
-  padding: 0; /* Remove padding */
-  margin: 0; /* Remove margin */
+  list-style: none;
+  /* Remove default list style */
+  padding: 0;
+  /* Remove padding */
+  margin: 0;
+  /* Remove margin */
 }
 
 /* my work */
@@ -607,54 +824,65 @@ ol {
   justify-content: center;
   align-items: center;
 }
+
 .img-work {
-  background-color: #8a38f5; /* Purple background for work image */
+  background-color: #8a38f5;
+  /* Purple background for work image */
   width: 240px;
   height: 180px;
   border-radius: 10px;
-  margin: 18px 0px; /* Space above and below */
+  margin: 18px 0px;
+  /* Space above and below */
 }
+
 .all-works {
-  display: flex; /* Use flexbox for layout */
+  display: flex;
+  /* Use flexbox for layout */
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center; /* Center items vertically */
-  width: 100%; /* Full width for work items */
+  align-items: center;
+  /* Center items vertically */
+  width: 100%;
+  /* Full width for work items */
   /* gap: 50px; Space between work items */
   gap: 5%;
 }
-#my-work > div > div > h2 {
+
+#my-work>div>div>h2 {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 50px;
 }
+
 .text-for-work {
   max-width: 251px;
 }
+
 @media screen and (min-width: 959px) {
-    .my-work-container {
-        margin: 70px 140px;
-        min-width: 100px;
-      }
-      
-#my-work {
-  height: 100vh;
+  .my-work-container {
+    margin: 70px 140px;
+    min-width: 100px;
+  }
+
+  #my-work {
+    height: 100vh;
+  }
+
 }
 
-    }
+.work {
+  /* max-width: 3000px; */
+  /* width: 25%; */
+  display: flex;
+  flex-direction: column;
+  gap: 10%;
+  /* background-color: blanchedalmond; */
+}
 
-    .work {
-      /* max-width: 3000px; */
-      /* width: 25%; */
-      display: flex;
-      flex-direction: column;
-      gap: 10%;
-      /* background-color: blanchedalmond; */
-    }
-    .my-work-container {
-      display: flex;
-      flex-direction: column;
-      /* align-items: center; */
-      justify-content: center;
-    }
+.my-work-container {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+}
