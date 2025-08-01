@@ -11,7 +11,6 @@
       href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;600&display=swap"
       rel="stylesheet"
     />
-    <script src="script.js" defer></script>
   </head>
   <body>
     <nav>
@@ -22,7 +21,7 @@
             <a href="#about">About</a>
           </div>
           <div class="nav-bar Work">
-            <a href="#work">Work</a>
+            <a href="#my-work">Work</a>
           </div>
           <div class="nav-bar Contact">
             <a href="#contact">Contact</a>
@@ -68,11 +67,11 @@
           class="profile-pic"
         />
         <h1>
-          Hi, I’m <span class="highlight">Pranshu Dobriyal</span>.<br />
+          Hi, I'm <span class="highlight">Pranshu Dobriyal</span>.<br />
           <span class="highlight">Full Stack Developer</span>
         </h1>
         <p>
-          How do you know you’re a developer? You <br />spend more time
+          How do you know you're a developer? You <br />spend more time
           debugging than building. 😅
         </p>
         <button class="download-resume">
@@ -88,7 +87,7 @@
           <h2>Get to <span class="highlight">Know Me</span></h2>
           <p>
             I'm Pranshu, a full stack developer passionate about building web
-            apps with clean code and creative user interfaces. I’m currently
+            apps with clean code and creative user interfaces. I'm currently
             freelancing, learning, and exploring new job opportunities while
             working on real-world projects that help me grow as a developer.
             <br />
@@ -96,7 +95,7 @@
 
             I enjoy working across the stack — from crafting responsive
             front-ends to building powerful back-end systems using tools like
-            HTML, CSS, JavaScript, Node.js, React, and PostgreSQL. I’m also
+            HTML, CSS, JavaScript, Node.js, React, and PostgreSQL. I'm also
             diving into the world of Web3 and DApps to stay ahead of the curve.
             <br />
             <br />
@@ -148,23 +147,56 @@
           <h2>My Work</h2>
           <div class="all-works">
             <div class="first-work work">
-              <div class="img-work img-work1"><img src="" alt="work1" /></div>
+              <div class="img-work img-work1">
+                <img src="https://picsum.photos/600/450?random=1" alt="Design System Project" />
+              </div>
               <div class="text-for-work">Making a design system from scratch</div>
-              <p>Learn More</p>
+              <a href="#">Visit Us</a>
             </div>
             <div class="second-work work">
-              <div class="img-work img-work2"><img src="" alt="work2" /></div>
+              <div class="img-work img-work2">
+                <img src="https://picsum.photos/600/450?random=2" alt="React Portfolio Project" />
+              </div>
               <div class="text-for-work">Stunning portfolio website design using React</div>
-              <p>Learn More</p>
+              <a href="#">Visit Us</a>
             </div>
             <div class="third-work work">
-              <div class="img-work img-work3"><img src="" alt="work3" /></div>
+              <div class="img-work img-work3">
+                <img src="https://picsum.photos/600/450?random=3" alt="Vue.js Blog Project" />
+              </div>
               <div class="text-for-work">A powerful blog app designed using Vue Js</div>
-              <p>Learn More</p>
+              <a href="#">Visit Us</a>
             </div>
           </div>
         </div>
       </div>
     </section>
+    <section id="contact">
+      <div class="contact-container"> 
+        <div class="contact-content">
+          <div class="contact-text">
+            <h2>Have a project or opportunity?</h2>
+            <p>
+              I'm always up for exciting collaborations or new challenges. Feel free to reach out!
+            </p>
+          </div>
+          <div class="form-container">
+            <form>
+              <input type="text" name="name" placeholder="Name" required>
+              <input type="email" name="email" placeholder="Email" required>
+              <textarea name="message" placeholder="Message" required></textarea>
+              <button type="submit" class="send-message">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-content">
+        <div class="footer-email">hipranshu@pranshudobriyal.com</div>
+        <div class="footer-credit">design | develop by <a href="#" class="highlight">pranshu</a></div>
+      </div>
+    </footer>
+    <script src="script.js" defer></script>
   </body>
 </html>

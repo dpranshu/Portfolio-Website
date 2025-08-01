@@ -1,42 +1,49 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const sections = ['hero', 'about', 'my-work'];
-    let currentSectionIndex = 0;
+    // Get all sections and navigation arrows
+    const sections = ['hero', 'about', 'my-work', 'contact'];
+    const upArrow = document.querySelector('.nav-up');
+    const downArrow = document.querySelector('.nav-down');
 
-    // Get navigation buttons
-    const upButton = document.querySelector('.nav-up');
-    const downButton = document.querySelector('.nav-down');
+    // Function to get current section
+    function getCurrentSection() {
+        const scrollPosition = window.scrollY + window.innerHeight / 2;
+        
+        for (let i = sections.length - 1; i >= 0; i--) {
+            const section = document.getElementById(sections[i]);
+            if (!section) continue;
+            
+            const sectionTop = section.offsetTop;
+            const sectionBottom = sectionTop + section.offsetHeight;
+            
+            if (scrollPosition >= sectionTop && scrollPosition <= sectionBottom) {
+                return i;
+            }
+        }
+        return 0;
+    }
 
-    // Function to navigate to a section
-    function navigateToSection(index) {
-        if (index >= 0 && index < sections.length) {
-            currentSectionIndex = index;
-            document.getElementById(sections[index]).scrollIntoView({ behavior: 'smooth' });
+    // Function to update arrow hrefs
+    function updateArrows() {
+        const currentIndex = getCurrentSection();
+        
+        // Update up arrow
+        if (currentIndex > 0) {
+            upArrow.href = '#' + sections[currentIndex - 1];
+        } else {
+            upArrow.href = '#' + sections[0];
+        }
+        
+        // Update down arrow
+        if (currentIndex < sections.length - 1) {
+            downArrow.href = '#' + sections[currentIndex + 1];
+        } else {
+            downArrow.href = '#' + sections[sections.length - 1];
         }
     }
 
-    // Up button click handler
-    upButton.addEventListener('click', function(e) {
-        e.preventDefault();
-        navigateToSection(currentSectionIndex - 1);
-    });
-
-    // Down button click handler
-    downButton.addEventListener('click', function(e) {
-        e.preventDefault();
-        navigateToSection(currentSectionIndex + 1);
-    });
-
-    // Update current section based on scroll position
-    window.addEventListener('scroll', function() {
-        const scrollPosition = window.scrollY;
-        
-        sections.forEach((section, index) => {
-            const element = document.getElementById(section);
-            const rect = element.getBoundingClientRect();
-            
-            if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
-                currentSectionIndex = index;
-            }
-        });
-    });
+    // Update arrows on scroll
+    window.addEventListener('scroll', updateArrows);
+    
+    // Initial update
+    updateArrows();
 });
