@@ -54,6 +54,7 @@ a {
   text-decoration: none;
   /* Remove default underline */
   color: #333;
+  
   /* Dark gray text color */
   font-weight: 600;
   /* Semi-bold text */
@@ -63,6 +64,10 @@ a {
   /* For underline animation */
   transition: color 0.3s ease;
   /* Smooth color change */
+}
+/* Change link color + animate after element on hover */
+a:hover {
+  /* color: #8a38f5; */
 }
 
 /* Navbar specific link styles */
